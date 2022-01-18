@@ -36,6 +36,12 @@ mat-card.first div{
   }
 }
 
+::ng-deep .rowForm {
+  button {
+    margin-left: 0.8em;
+  }
+}
+
 mat-card.second{
   width: 90%!important;
   margin-top: 6em;
