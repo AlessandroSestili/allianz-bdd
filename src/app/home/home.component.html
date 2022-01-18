@@ -27,6 +27,7 @@
     </mat-card-actions>
 </mat-card>
 
+<!-- SECONDA CARD -->
 
 <mat-card *ngIf="isSearching === true" style="margin: auto; width: 60%; margin-top: 6em;" class="mat-elevation-z8">
 
@@ -36,16 +37,18 @@
     </div>
   </mat-card-title>
 
-  <form>
+  <form fxLayout="row" fxLayoutAlign="center center">
       <mat-form-field appearance="fill">
           <mat-label>Company</mat-label>
           <input matInput placeholder="Ex. Allianz">
       </mat-form-field>
 
-      <mat-form-field class="example-full-width" appearance="fill">
+      <mat-form-field appearance="fill">
           <mat-label>Policy</mat-label>
           <input matInput placeholder="Ex. 0000000000">
       </mat-form-field>
+
+      <!-- <button mat-raised-button color="primary">Search</button> -->
   </form>
 
   <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
