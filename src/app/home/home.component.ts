@@ -14,7 +14,7 @@ import { LiveAnnouncer } from '@angular/cdk/a11y';
 export class HomeComponent implements OnInit, AfterViewInit {
 
   // Validatori della card inizale
-  numberRegEx = /^-?(0|[1-9]\d*)?$/;
+  numberRegEx = /^-?([0-9]\d*)?$/;
   companyFormControl = new FormControl('', [Validators.required]);
   policyFormControl = new FormControl('', [Validators.required, Validators.pattern(this.numberRegEx), Validators.minLength(4)])
 

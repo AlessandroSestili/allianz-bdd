@@ -11,14 +11,11 @@ div.container{
 
 .div-title {
   margin-bottom: 25px;
+  color: #004a93;
 }
 
 mat-card.first{
   margin-top: 30vh;
-}
-
-mat-card.first div{
-  color: #004a93;
 }
 
 ::ng-deep .firstForm {
@@ -50,6 +47,7 @@ mat-card.second{
 mat-card.second div{
   color: #004a93;
   margin-bottom: 1em;
+  margin-left: 0.5em;
 }
 
 .filter-right{
