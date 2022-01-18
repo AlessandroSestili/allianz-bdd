@@ -1,0 +1,43 @@
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+mat-toolbar{
+  padding: 0 2em;
+  width: 100%;
+  position: fixed;
+  position: -webkit-fixed; /* For macOS/iOS Safari */
+  top: 0; /* Sets the sticky toolbar to be on top */
+  z-index: 1000; /* Ensure that your app's content doesn't overlap the toolbar */
+}
+
+a.navlink{
+  margin-left: 1.4em;
+  text-decoration: none;
+  color: #004a93;
+  font-size: 1em;
+}
+
+a.icon{
+  margin-top: 0.5em;
+  margin-left: 1.4em;
+  text-decoration: none;
+  color: #004a93;
+  transform: scale(1.4);
+}
+
+div.hr{
+  border-right:1px solid #004a93;
+  height:2em;
+  margin-left: 1.4em;
+}
+
+img{
+  width: 8em;
+  cursor: pointer;
+}
+
+.active{
+  color: black;
+}
+

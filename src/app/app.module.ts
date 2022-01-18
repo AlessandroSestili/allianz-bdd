@@ -29,7 +29,8 @@ import {MatTableModule} from '@angular/material/table';
     MatCardModule,
     MatButtonModule,
     MatToolbarModule,
-    MatExpansionModule
+    MatExpansionModule,
+    MatIconModule
 
   ],
   providers: [],
