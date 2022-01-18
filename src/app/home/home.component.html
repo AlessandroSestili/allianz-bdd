@@ -1,4 +1,4 @@
-<mat-card style="margin: auto; width: 30em; margin-top: 6em; margin-bottom: 1em;" class="mat-elevation-z8" fxLayout="column" fxLayoutAlign="center center">
+<mat-card *ngIf="isSearching === false" style="margin: auto; width: 30em; margin-top: 6em; margin-bottom: 1em;" class="mat-elevation-z8" fxLayout="column" fxLayoutAlign="center center">
     <mat-card-title>
         <div style="color: #004a93; margin-bottom: 1em;">
             Insert your policy informations
@@ -21,17 +21,21 @@
         <button
             mat-raised-button
             color="primary"
+            (click)="switchSearch()"
         > Search
         </button>
     </mat-card-actions>
 </mat-card>
 
 
-<mat-card style="margin: auto; width: 60%; margin-top: 6em;" class="mat-elevation-z8">
+<mat-card *ngIf="isSearching === true" style="margin: auto; width: 60%; margin-top: 6em;" class="mat-elevation-z8">
 
   <mat-card-title>
-      Insert your policy informations
+    <div style="color: #004a93; margin-bottom: 1em;">
+        Insert your policy informations
+    </div>
   </mat-card-title>
+
   <form>
       <mat-form-field appearance="fill">
           <mat-label>Company</mat-label>
@@ -45,8 +49,6 @@
   </form>
 
   <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
-
-
 
       <!-- Name Column -->
       <ng-container matColumnDef="name">
@@ -75,4 +77,5 @@
       <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
       <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
   </table>
+
 </mat-card>
