@@ -30,8 +30,11 @@ import {MatTableModule} from '@angular/material/table';
     MatButtonModule,
     MatToolbarModule,
     MatExpansionModule,
-    MatIconModule
-
+    MatIconModule,
+    MatFormFieldModule,
+    MatInputModule,
+  ],
+  exports: [
   ],
   providers: [],
   bootstrap: [AppComponent]
