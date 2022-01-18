@@ -45,14 +45,14 @@
     <form class="rowForm" #secondForm>
         <mat-form-field appearance="fill">
             <mat-label>Company</mat-label>
-            <input matInput placeholder="Ex. Allianz" [formControl]="tableCompanyFormControl">
+            <input matInput placeholder="Ex. Allianz" [formControl]="tableCompanyFormControl" [(ngModel)]="tableCompany">
             <mat-error *ngIf="tableCompanyFormControl.hasError('required')">Insert your company name</mat-error>
 
         </mat-form-field>
 
         <mat-form-field class="form-right" appearance="fill">
             <mat-label>Policy</mat-label>
-            <input matInput placeholder="Ex. 0000000000" [formControl]="tablePolicyFormControl">
+            <input matInput placeholder="Ex. 0000000000" [formControl]="tablePolicyFormControl" [(ngModel)]="tablePolicy">
             <mat-error *ngIf="tablePolicyFormControl.invalid">Insert your policy</mat-error>
         </mat-form-field>
 
@@ -61,6 +61,8 @@
           mat-raised-button
           color="primary"
           [disabled]="tablePolicyFormControl.invalid || tablePolicyFormControl.invalid"
+          aria-label="Clear"
+          (click)="refreshTableInputValue()"
           > Search
         </button>
 

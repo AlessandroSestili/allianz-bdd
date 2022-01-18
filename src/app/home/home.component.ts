@@ -18,10 +18,12 @@ export class HomeComponent implements OnInit {
   tableCompanyFormControl = new FormControl('', [Validators.required]);
   tablePolicyFormControl = new FormControl('', [Validators.required, Validators.pattern(this.numberRegEx), Validators.minLength(4)])
 
+  // Valori di ngModel della table
+  tableCompany: any
+  tablePolicy: any
   @ViewChild(MatTable) table: any;
 
   displayedColumns: string[] = ['CompanyName', 'Description', 'FileType', 'Download'];
-
   dataSource: any[] = [
     { CompanyName: 'Hydrogen', Description: 1111, FileType: 'txt', Download:  "download" },
     { CompanyName: 'Helium', Description: 4.0026, FileType: 'txt',Download: "download"},
@@ -44,6 +46,17 @@ export class HomeComponent implements OnInit {
 
   switchSearch(){
     this.isSearching = !this.isSearching
+  }
+
+  //Svuota i valori degli input dei campi sopra la TABLE
+  refreshTableInputValue() {
+    //Svuota i campi
+    this.tableCompany = ''
+    this.tablePolicy = ''
+
+    //resetta gli errori
+    this.tableCompanyFormControl.reset()
+    this.tablePolicyFormControl.reset()
   }
 
   logger() {
