@@ -16,7 +16,7 @@
           <mat-form-field class="example-full-width" appearance="fill">
               <mat-label>Policy</mat-label>
               <input matInput placeholder="Ex. 0000000000" [formControl]="policyFormControl">
-              <mat-error *ngIf="policyFormControl.hasError('required')">Insert your policy</mat-error>
+              <mat-error *ngIf="policyFormControl.invalid">Insert your policy</mat-error>
           </mat-form-field>
 
           <mat-card-actions align="end">

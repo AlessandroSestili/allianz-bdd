@@ -11,7 +11,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 export class HomeComponent implements OnInit {
   numberRegEx = /^-?(0|[1-9]\d*)?$/;
   companyFormControl = new FormControl('', [Validators.required]);
-  policyFormControl = new FormControl('', [Validators.required, Validators.pattern(this.numberRegEx)])
+  policyFormControl = new FormControl('', [Validators.required, Validators.pattern(this.numberRegEx), Validators.minLength(4)])
   @ViewChild('firstForm') firstForm: any
 
   @ViewChild(MatTable) table: any;
