@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FlexLayoutModule } from "@angular/flex-layout";
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -16,6 +17,8 @@ import { MatExpansionModule } from '@angular/material/expansion';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatTableModule} from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatListModule, MatNavList} from '@angular/material/list';
 
 
 @NgModule({
@@ -27,6 +30,7 @@ import { MatPaginatorModule } from '@angular/material/paginator';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    FlexLayoutModule,
 
     MatCardModule,
     MatButtonModule,
@@ -38,7 +42,9 @@ import { MatPaginatorModule } from '@angular/material/paginator';
     MatDividerModule,
     MatCardModule,
     MatTableModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    MatSidenavModule,
+    MatListModule
   ],
   exports: [
   ],
