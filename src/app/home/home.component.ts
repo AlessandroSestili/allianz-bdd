@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatButton } from '@angular/material/button';
 import { MatTable } from '@angular/material/table';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-home',
@@ -8,6 +9,10 @@ import { MatTable } from '@angular/material/table';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
+  numberRegEx = /^-?(0|[1-9]\d*)?$/;
+  companyFormControl = new FormControl('', [Validators.required]);
+  policyFormControl = new FormControl('', [Validators.required, Validators.pattern(this.numberRegEx)])
+  @ViewChild('firstForm') firstForm: any
 
   @ViewChild(MatTable) table: any;
 
@@ -35,6 +40,10 @@ export class HomeComponent implements OnInit {
 
   switchSearch(){
     this.isSearching = !this.isSearching
+  }
+
+  logger() {
+    this.firstForm
   }
 
 }

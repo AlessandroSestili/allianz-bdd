@@ -6,27 +6,31 @@
         </div>
     </mat-card-title>
 
-    <form class="firstForm">
-        <mat-form-field appearance="fill">
-            <mat-label>Company</mat-label>
-            <input matInput placeholder="Ex. Allianz">
-        </mat-form-field>
+      <form class="firstForm" #firstForm>
+          <mat-form-field appearance="fill">
+              <mat-label>Company</mat-label>
+              <input matInput placeholder="Ex. Allianz" [formControl]="companyFormControl">
+              <mat-error *ngIf="companyFormControl.hasError('required')">Insert your company name</mat-error>
+          </mat-form-field>
 
-        <mat-form-field class="example-full-width" appearance="fill">
-            <mat-label>Policy</mat-label>
-            <input matInput placeholder="Ex. 0000000000">
-        </mat-form-field>
-    </form>
+          <mat-form-field class="example-full-width" appearance="fill">
+              <mat-label>Policy</mat-label>
+              <input matInput placeholder="Ex. 0000000000" [formControl]="policyFormControl">
+              <mat-error *ngIf="policyFormControl.hasError('required')">Insert your policy</mat-error>
+          </mat-form-field>
 
-    <mat-card-actions align="end">
-        <button
-            mat-raised-button
-            color="primary"
-            (click)="switchSearch()"
-        > Search
-        </button>
-    </mat-card-actions>
-</mat-card>
+          <mat-card-actions align="end">
+            <button
+                mat-raised-button
+                color="primary"
+                (click)="switchSearch()"
+                (click)="logger()"
+                [disabled]="companyFormControl.invalid || policyFormControl.invalid"
+            > Search
+            </button>
+        </mat-card-actions>
+      </form>
+  </mat-card>
 </div>
 
 <!-- SECONDA CARD -->
@@ -53,7 +57,6 @@
         class="searchTable"
         mat-raised-button
         color="primary"
-        (click)="switchSearch()"
         > Search
       </button>
 

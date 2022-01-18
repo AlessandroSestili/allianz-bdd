@@ -19,6 +19,8 @@ import { MatTableModule} from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatListModule, MatNavList} from '@angular/material/list';
+import { FormControl, Validators } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -44,7 +46,9 @@ import {MatListModule, MatNavList} from '@angular/material/list';
     MatTableModule,
     MatPaginatorModule,
     MatSidenavModule,
-    MatListModule
+    MatListModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   exports: [
   ],
