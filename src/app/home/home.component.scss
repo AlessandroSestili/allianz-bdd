@@ -12,6 +12,10 @@ div.container{
   margin-bottom: 25px;
 }
 
+mat-card.first{
+  margin-top: 30vh;
+}
+
 mat-card.first div{
   color: #004a93;
 }
@@ -33,7 +37,7 @@ mat-card.first div{
 
 mat-card.second{
   width: 90%!important;
-  margin-top: 10em;
+  margin-top: 6em;
 }
 
 mat-card.second div{
@@ -47,6 +51,7 @@ mat-card.second div{
 
 table {
   width: 100%;
+  overflow: auto;
 }
 
 .width{
@@ -56,4 +61,10 @@ table {
 .searchTable{
   left: 5.7rem;
   bottom: 0.5em;
+}
+
+/* sticky table header */
+.example-container {
+  height: 65vh;
+  overflow: auto;
 }
