@@ -1,6 +1,8 @@
-<mat-card style="margin: auto; width: 60%; margin-top: 6em;" class="mat-elevation-z8">
+<mat-card style="margin: auto; width: 60%; margin-top: 6em;" class="mat-elevation-z8" fxLayout="column" fxLayoutAlign="center center">
     <mat-card-title>
-        Insert your policy informations
+        <div style="color: #004a93; margin-bottom: 1em;">
+            Insert your policy informations
+        </div>
     </mat-card-title>
 
     <form>
@@ -14,4 +16,13 @@
             <input matInput placeholder="Ex. 0000000000">
         </mat-form-field>
     </form>
+
+    <mat-card-actions align='end'>
+        <button
+            mat-raised-button
+            color="primary"
+        > Search
+        </button>
+    </mat-card-actions>
+
 </mat-card>

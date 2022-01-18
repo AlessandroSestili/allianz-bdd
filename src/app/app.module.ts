@@ -6,14 +6,15 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { MatCardModule } from '@angular/material/card';
+import { MatCard, MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatExpansionModule } from '@angular/material/expansion';
-import {MatTableModule} from '@angular/material/table';
+import { MatTableModule } from '@angular/material/table';
+import { MatDivider, MatDividerModule } from '@angular/material/divider';
 
 
 @NgModule({
@@ -33,6 +34,8 @@ import {MatTableModule} from '@angular/material/table';
     MatIconModule,
     MatFormFieldModule,
     MatInputModule,
+    MatDividerModule,
+    MatCardModule,
   ],
   exports: [
   ],
