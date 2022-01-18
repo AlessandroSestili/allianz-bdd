@@ -12,6 +12,11 @@ mat-card.first{
   transform: translate(-50%, -50%);
 }
 
+mat-card.first div{
+  color: #004a93;
+  margin-bottom: 1em;
+}
+
 ::ng-deep .firstForm {
   mat-form-field{
     min-width: 150px;
@@ -22,9 +27,24 @@ mat-card.first{
 
 ::ng-deep .rowForm {
   mat-form-field {
-    width: 46% !important;
+    width: 40% !important;
     padding-left: 0.8em;
   }
+}
+
+mat-card.second{
+  margin: auto;
+  width: 90%!important;
+  margin-top: 6em;
+}
+
+mat-card.second div{
+  color: #004a93;
+  margin-bottom: 1em;
+}
+
+.form-right{
+  left: 3em
 }
 
 table {
@@ -33,4 +53,9 @@ table {
 
 .width{
   width: 90% !important;
+}
+
+.searchTable{
+  left: 5.7rem;
+  bottom: 0.5em;
 }

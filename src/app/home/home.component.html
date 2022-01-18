@@ -1,10 +1,10 @@
 <div class="container" fxLayout="column" fxLayoutAlign="start center">
-  <mat-card *ngIf="isSearching === false" class="mat-elevation-z8 first"> 
-      <mat-card-title>
-          <div style="color: #004a93; margin-bottom: 1em;">
-              Insert your policy informations
-          </div>
-      </mat-card-title>
+<mat-card *ngIf="isSearching === false" class="mat-elevation-z8 first">
+    <mat-card-title>
+        <div>
+            Insert your policy informations
+        </div>
+    </mat-card-title>
 
       <form class="firstForm" #firstForm>
           <mat-form-field appearance="fill">
@@ -34,10 +34,11 @@
 </div>
 
 <!-- SECONDA CARD -->
-<mat-card *ngIf="isSearching === true" style="margin: auto; width: 60%; margin-top: 6em;" class="mat-elevation-z8 width second">
+
+<mat-card *ngIf="isSearching === true" class="mat-elevation-z8 second">
 
   <mat-card-title>
-    <div style="color: #004a93; margin-bottom: 1em;">
+    <div>
         Insert your policy informations
     </div>
   </mat-card-title>
@@ -47,10 +48,18 @@
           <input matInput placeholder="Ex. Allianz">
       </mat-form-field>
 
-      <mat-form-field style="left: 3em;" appearance="fill">
+      <mat-form-field class="form-right" appearance="fill">
           <mat-label>Policy</mat-label>
           <input matInput placeholder="Ex. 0000000000">
       </mat-form-field>
+
+      <button
+        class="searchTable"
+        mat-raised-button
+        color="primary"
+        (click)="switchSearch()"
+        > Search
+      </button>
 
       <!-- <button mat-raised-button color="primary">Search</button> -->
   </form>
