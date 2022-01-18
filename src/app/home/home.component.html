@@ -9,13 +9,13 @@
 
       <form class="firstForm" #firstForm>
           <mat-form-field appearance="fill">
-              <mat-label>Company</mat-label>
+              <mat-label>	<mat-icon class="mat-icon-input">work</mat-icon>Company</mat-label>
               <input matInput placeholder="Ex. Allianz" [formControl]="companyFormControl">
               <mat-error *ngIf="companyFormControl.hasError('required')">Insert your company name</mat-error>
           </mat-form-field>
 
           <mat-form-field class="example-full-width" appearance="fill">
-              <mat-label>Policy</mat-label>
+              <mat-label><mat-icon class="mat-icon-input">assignment</mat-icon>Policy</mat-label>
               <input matInput placeholder="Ex. 0000000000" [formControl]="policyFormControl">
               <mat-error *ngIf="policyFormControl.invalid">Insert your policy</mat-error>
           </mat-form-field>
@@ -27,7 +27,7 @@
                 (click)="switchSearch()"
                 (click)="logger()"
                 [disabled]="companyFormControl.invalid || policyFormControl.invalid"
-            > Search
+            > 	<mat-icon>search</mat-icon> Search
             </button>
         </mat-card-actions>
       </form>
@@ -42,16 +42,16 @@
       </div>
     </mat-card-title>
 
-    <form class="rowForm" #secondForm>
+    <form class="rowForm" fxLayout.lt-md="column" fxLayoutAlign.lt-md="center center"  #secondForm>
         <mat-form-field appearance="fill">
-            <mat-label>Company</mat-label>
+            <mat-label><mat-icon class="mat-icon-input">work</mat-icon>Company</mat-label>
             <input matInput placeholder="Ex. Allianz" [formControl]="tableCompanyFormControl" [(ngModel)]="tableCompany">
             <mat-error *ngIf="tableCompanyFormControl.hasError('required')">Insert your company name</mat-error>
 
         </mat-form-field>
 
         <mat-form-field class="form-right" appearance="fill">
-            <mat-label>Policy</mat-label>
+            <mat-label><mat-icon class="mat-icon-input">assignment</mat-icon>Policy</mat-label>
             <input matInput placeholder="Ex. 0000000000" [formControl]="tablePolicyFormControl" [(ngModel)]="tablePolicy">
             <mat-error *ngIf="tablePolicyFormControl.invalid">Insert your policy</mat-error>
         </mat-form-field>
@@ -63,7 +63,7 @@
           [disabled]="tablePolicyFormControl.invalid || tablePolicyFormControl.invalid"
           aria-label="Clear"
           (click)="refreshTableInputValue()"
-          > Search
+          > 	<mat-icon>search</mat-icon>Search
         </button>
 
     </form>

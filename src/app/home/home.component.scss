@@ -6,8 +6,9 @@ div.container{
 @media screen and (max-width: 600px) {
   mat-card.first{
     width: 80%;
-    }
   }
+}
+
 .div-title {
   margin-bottom: 25px;
 }
@@ -68,6 +69,9 @@ table {
   overflow: auto;
 }
 
+.mat-icon-input {
+  margin-right: 5px;
+}
 // scrollBar removed
 .example-container::-webkit-scrollbar{
   display: none;
