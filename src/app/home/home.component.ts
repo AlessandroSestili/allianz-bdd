@@ -10,25 +10,25 @@ export class HomeComponent implements OnInit {
 
   @ViewChild(MatTable) table: any;
 
-  displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
+  displayedColumns: string[] = ['name', 'Description', 'FileType', 'Download'];
 
   dataSource: any[] = [
-    {position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H'},
-    {position: 2, name: 'Helium', weight: 4.0026, symbol: 'He'},
-    {position: 3, name: 'Lithium', weight: 6.941, symbol: 'Li'},
-    {position: 4, name: 'Beryllium', weight: 9.0122, symbol: 'Be'},
-    {position: 5, name: 'Boron', weight: 10.811, symbol: 'B'},
-    {position: 6, name: 'Carbon', weight: 12.0107, symbol: 'C'},
-    {position: 7, name: 'Nitrogen', weight: 14.0067, symbol: 'N'},
-    {position: 8, name: 'Oxygen', weight: 15.9994, symbol: 'O'},
-    {position: 9, name: 'Fluorine', weight: 18.9984, symbol: 'F'},
-    {position: 10, name: 'Neon', weight: 20.1797, symbol: 'Ne'},
+    { name: 'Hydrogen', Decription: 1.0079, FileType: 'H', Download: false},
+    { name: 'Helium', Description: 4.0026, FileType: 'He',Download: false},
+    { name: 'Lithium', Description: 6.941, FileType: 'Li',Download: false},
+    { name: 'Beryllium', Description: 9.0122, FileType: 'Be',Download: false},
+    { name: 'Boron', Description: 10.811, FileType: 'B',Download: false},
+    { name: 'Carbon', Description: 12.0107, FileType: 'C',Download: false},
+    { name: 'Nitrogen', Description: 14.0067, FileType: 'N',Download: false},
+    { name: 'Oxygen', Description: 15.9994, FileType: 'O',Download: false},
+    { name: 'Fluorine', Description: 18.9984, FileType: 'F',Download: false},
+    { name: 'Neon', Description: 20.1797, FileType: 'Ne',Download: false},
   ];
 
   constructor() { }
 
   ngOnInit(): void {
-    this.table.renderRows();
+    // this.table.renderRows();
   }
 
 }
