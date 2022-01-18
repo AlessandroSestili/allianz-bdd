@@ -41,3 +41,8 @@ img{
   color: black;
 }
 
+::ng-deep mat-card-actions {
+  padding: 0 !important;
+  margin-bottom: 0 !important;
+}
+
