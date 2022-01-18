@@ -1,14 +1,17 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 import { MatButton } from '@angular/material/button';
-import { MatTable } from '@angular/material/table';
+import { MatTable, MatTableDataSource } from '@angular/material/table';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { MatSort } from '@angular/material/sort';
+import { MatPaginator } from '@angular/material/paginator';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent implements OnInit, AfterViewInit {
+
   // Validatori della card inizale
   numberRegEx = /^-?(0|[1-9]\d*)?$/;
   companyFormControl = new FormControl('', [Validators.required]);
@@ -22,9 +25,12 @@ export class HomeComponent implements OnInit {
   tableCompany: any
   tablePolicy: any
   @ViewChild(MatTable) table: any;
+  @ViewChild(MatPaginator) paginator!: MatPaginator;
+  @ViewChild(MatSort) sort: MatSort = new MatSort;
 
   displayedColumns: string[] = ['CompanyName', 'Description', 'FileType', 'Download'];
-  dataSource: any[] = [
+
+  data: any[] = [
     { CompanyName: 'Hydrogen', Description: 1111, FileType: 'txt', Download:  "download" },
     { CompanyName: 'Helium', Description: 4.0026, FileType: 'txt',Download: "download"},
     { CompanyName: 'Lithium', Description: 6.941, FileType: 'txt',Download: "download"},
@@ -37,11 +43,18 @@ export class HomeComponent implements OnInit {
     { CompanyName: 'Neon', Description: 20.1797, FileType: 'txt',Download: "download"},
   ];
 
+  dataSource:any;
+
   isSearching: boolean = false
 
-  constructor() { }
+  constructor() { this.dataSource = new MatTableDataSource(this.data); }
 
   ngOnInit(): void {
+  }
+
+  ngAfterViewInit(): void {
+    this.dataSource.paginator = this.paginator;
+    this.dataSource.sort = this.sort;
   }
 
   switchSearch(){
@@ -57,6 +70,15 @@ export class HomeComponent implements OnInit {
     //resetta gli errori
     this.tableCompanyFormControl.reset()
     this.tablePolicyFormControl.reset()
+  }
+
+  applyFilter(event: Event) {
+    const filterValue = (event.target as HTMLInputElement).value;
+    this.dataSource.filter = filterValue.trim().toLowerCase();
+
+    if (this.dataSource.paginator) {
+      this.dataSource.paginator.firstPage();
+    }
   }
 
   logger() {

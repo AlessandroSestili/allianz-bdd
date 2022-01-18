@@ -51,13 +51,11 @@ mat-card.second div{
 
 table {
   width: 100%;
-  overflow: auto;
 }
 
 .width{
   width: 90% !important;
 }
-
 
 /* sticky table header */
 .example-container {
@@ -68,3 +66,16 @@ table {
 .mat-icon-input {
   margin-right: 5px;
 }
+// scrollBar removed
+.example-container::-webkit-scrollbar{
+  display: none;
+}
+
+.displayNone{
+  display: none;
+}
+
+.displayBlock{
+  display: block;
+}
+
