@@ -6,8 +6,9 @@ div.container{
 @media screen and (max-width: 600px) {
   mat-card.first{
     width: 80%;
-    }
   }
+}
+
 .div-title {
   margin-bottom: 25px;
 }
@@ -43,10 +44,6 @@ mat-card.second{
 mat-card.second div{
   color: #004a93;
   margin-bottom: 1em;
-}
-
-.form-right{
-  margin-left: 3em
 }
 
 table {

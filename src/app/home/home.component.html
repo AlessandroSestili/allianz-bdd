@@ -42,7 +42,7 @@
       </div>
     </mat-card-title>
 
-    <form class="rowForm" #secondForm>
+    <form class="rowForm" fxLayout.lt-md="column" fxLayoutAlign.lt-md="center center"  #secondForm>
         <mat-form-field appearance="fill">
             <mat-label>Company</mat-label>
             <input matInput placeholder="Ex. Allianz" [formControl]="tableCompanyFormControl" [(ngModel)]="tableCompany">
