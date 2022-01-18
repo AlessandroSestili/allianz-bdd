@@ -13,6 +13,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatExpansionModule } from '@angular/material/expansion';
+import { MatDivider, MatDividerModule } from '@angular/material/divider';
 import {MatTable, MatTableModule} from '@angular/material/table';
 
 
@@ -33,6 +34,8 @@ import {MatTable, MatTableModule} from '@angular/material/table';
     MatIconModule,
     MatFormFieldModule,
     MatInputModule,
+    MatDividerModule,
+    MatCardModule,
     MatTableModule,
   ],
   exports: [
