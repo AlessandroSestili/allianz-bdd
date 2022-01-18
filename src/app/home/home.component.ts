@@ -9,10 +9,14 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
+  // Validatori della card inizale
   numberRegEx = /^-?(0|[1-9]\d*)?$/;
   companyFormControl = new FormControl('', [Validators.required]);
   policyFormControl = new FormControl('', [Validators.required, Validators.pattern(this.numberRegEx), Validators.minLength(4)])
-  @ViewChild('firstForm') firstForm: any
+
+  //Validatori della table
+  tableCompanyFormControl = new FormControl('', [Validators.required]);
+  tablePolicyFormControl = new FormControl('', [Validators.required, Validators.pattern(this.numberRegEx), Validators.minLength(4)])
 
   @ViewChild(MatTable) table: any;
 
@@ -43,7 +47,6 @@ export class HomeComponent implements OnInit {
   }
 
   logger() {
-    this.firstForm
   }
 
 }
