@@ -3,6 +3,12 @@ div.container{
   height: 100%;
 }
 
+@media screen and (max-width: 600px) {
+  mat-card.first{
+    width: 80%;
+    }
+  }
+
 mat-card.first div{
   color: #004a93;
 }
@@ -23,7 +29,6 @@ mat-card.first div{
 }
 
 mat-card.second{
-  margin: auto;
   width: 90%!important;
   margin-top: 10em;
 }

@@ -1,5 +1,9 @@
 <mat-toolbar class="mat-elevation-z8">
 
+  <button mat-icon-button style="color: #004a93;" fxHide.gt-xs (click)="sidenav.toggle()">
+    <mat-icon>menu</mat-icon>
+  </button>
+
   <img src="../assets/logo/Allianz-logo.png" alt="" routerLink="">
   <div class="hr"></div>
   <a class="navlink">Banca Dati Documentale</a>
@@ -10,6 +14,21 @@
 
 </mat-toolbar>
 
-<app-home></app-home>
+<!-- SIDENAV -->
+
+<mat-sidenav-container fxFlexFill >
+  <mat-sidenav #sidenav>
+    <mat-nav-list class="navLinks">
+      <!-- <a (click)="sidenav.toggle()" routerLinkActive="active" mat-list-item>HOME</a> -->
+
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content fxFlexFill>
+
+    <app-home></app-home>
+
+  </mat-sidenav-content>
+</mat-sidenav-container>
+
 
 <!-- <router-outlet></router-outlet> -->

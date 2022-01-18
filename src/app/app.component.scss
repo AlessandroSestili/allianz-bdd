@@ -11,6 +11,16 @@ mat-toolbar{
   z-index: 1000; /* Ensure that your app's content doesn't overlap the toolbar */
 }
 
+@media screen and (max-width: 600px) {
+  mat-toolbar{
+    padding: 0 0.6em;
+  }
+
+  a.navlink, .example-spacer{
+    display: none;
+  }
+}
+
 a.navlink{
   margin-left: 1.4em;
   text-decoration: none;
@@ -39,6 +49,18 @@ img{
 
 .active{
   color: black;
+}
+
+mat-sidenav{
+  width: 70%;
+}
+
+mat-nav-list{
+  margin-top: 5em;
+}
+
+.navLinks a{
+  color: #004a93;
 }
 
 ::ng-deep mat-card-actions {
