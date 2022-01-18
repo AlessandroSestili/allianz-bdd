@@ -36,7 +36,6 @@
   <!-- SECONDA CARD -->
   <mat-card [ngClass]="isSearching == true ? 'displayBlock' : 'displayNone'" class="mat-elevation-z8 second">
 
-
     <mat-card-title>
       <div>
           Insert your policy informations
@@ -69,7 +68,7 @@
 
     </form>
 
-    <mat-form-field appearance="standard">
+    <mat-form-field class="filter-right" appearance="standard">
       <mat-label>Filter</mat-label>
       <input matInput (keyup)="applyFilter($event)" placeholder="Company Name" #input>
     </mat-form-field>
@@ -111,7 +110,7 @@
           </tr>
       </table>
     </div>
-    <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of users"></mat-paginator>
+    <mat-paginator [pageSizeOptions]="[10, 25, 100]" aria-label="Select page of users"></mat-paginator>
   </mat-card>
 
 </div>
