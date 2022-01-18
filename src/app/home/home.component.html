@@ -1,4 +1,5 @@
-<mat-card *ngIf="isSearching === false" style="margin: auto; width: 30em; margin-top: 6em; margin-bottom: 1em;" class="mat-elevation-z8" fxLayout="column" fxLayoutAlign="center center">
+<div class="container" fxLayout="column" fxLayoutAlign="start center">
+<mat-card *ngIf="isSearching === false" class="mat-elevation-z8 first">
     <mat-card-title>
         <div style="color: #004a93; margin-bottom: 1em;">
             Insert your policy informations
@@ -26,10 +27,11 @@
         </button>
     </mat-card-actions>
 </mat-card>
+</div>
 
 <!-- SECONDA CARD -->
 
-<mat-card *ngIf="isSearching === true" style="margin: auto; width: 60%; margin-top: 6em;" class="mat-elevation-z8 width">
+<mat-card *ngIf="isSearching === true" style="margin: auto; width: 60%; margin-top: 6em;" class="mat-elevation-z8 width second">
 
   <mat-card-title>
     <div style="color: #004a93; margin-bottom: 1em;">
