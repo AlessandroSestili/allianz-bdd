@@ -6,7 +6,7 @@
         </div>
     </mat-card-title>
 
-    <form>
+    <form class="firstForm">
         <mat-form-field appearance="fill">
             <mat-label>Company</mat-label>
             <input matInput placeholder="Ex. Allianz">
@@ -38,13 +38,13 @@
         Insert your policy informations
     </div>
   </mat-card-title>
-  <form fxLayout="row" fxLayoutAlign="center center">
+  <form class="rowForm">
       <mat-form-field appearance="fill">
           <mat-label>Company</mat-label>
           <input matInput placeholder="Ex. Allianz">
       </mat-form-field>
 
-      <mat-form-field appearance="fill">
+      <mat-form-field style="left: 3em;" appearance="fill">
           <mat-label>Policy</mat-label>
           <input matInput placeholder="Ex. 0000000000">
       </mat-form-field>
@@ -54,9 +54,11 @@
   <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
 
       <!-- Name Column -->
-      <ng-container matColumnDef="name">
-        <th mat-header-cell *matHeaderCellDef> Name </th>
-        <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+      <ng-container matColumnDef="CompanyName">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header disableClear sortActionDescription="Sort by name">
+          Company Name
+        </th>
+        <td mat-cell *matCellDef="let element"> {{element.CompanyName}} </td>
       </ng-container>
 
       <!-- Weight Column -->
@@ -67,7 +69,7 @@
 
       <!-- Symbol Column -->
       <ng-container matColumnDef="FileType">
-        <th mat-header-cell *matHeaderCellDef> FileType </th>
+        <th mat-header-cell *matHeaderCellDef> File Type </th>
         <td mat-cell *matCellDef="let element"> {{element.FileType}} </td>
       </ng-container>
 
@@ -80,5 +82,6 @@
       <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
       <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
   </table>
+  <!-- <mat-paginator style="padding-top: 10em" [length]="resultsLength" [pageSize]="30" aria-label="Select page of GitHub search results"></mat-paginator> -->
 
 </mat-card>

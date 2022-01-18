@@ -12,14 +12,19 @@ mat-card.first{
   transform: translate(-50%, -50%);
 }
 
-form {
+::ng-deep .firstForm {
+  mat-form-field{
     min-width: 150px;
     max-width: 500px;
-    width: 100%;
+    width: 100% !important;
+  }
 }
 
-::ng-deep mat-form-field {
-    width: 100% !important;
+::ng-deep .rowForm {
+  mat-form-field {
+    width: 46% !important;
+    padding-left: 0.8em;
+  }
 }
 
 table {
