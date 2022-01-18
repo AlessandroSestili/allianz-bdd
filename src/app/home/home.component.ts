@@ -14,16 +14,16 @@ export class HomeComponent implements OnInit {
   displayedColumns: string[] = ['name', 'Description', 'FileType', 'Download'];
 
   dataSource: any[] = [
-    { name: 'Hydrogen', Decription: 1.0079, FileType: 'txt', Download:  "ok" },
-    { name: 'Helium', Description: 4.0026, FileType: 'txt',Download: "false"},
-    { name: 'Lithium', Description: 6.941, FileType: 'txt',Download: "false"},
-    { name: 'Beryllium', Description: 9.0122, FileType: 'txt',Download: "false"},
-    { name: 'Boron', Description: 10.811, FileType: 'txt',Download: "false"},
-    { name: 'Carbon', Description: 12.0107, FileType: 'txt',Download: "false"},
-    { name: 'Nitrogen', Description: 14.0067, FileType: 'txt',Download: "false"},
-    { name: 'Oxygen', Description: 15.9994, FileType: 'txt',Download: "false"},
-    { name: 'Fluorine', Description: 18.9984, FileType: 'txt',Download: "false"},
-    { name: 'Neon', Description: 20.1797, FileType: 'txt',Download: "false"},
+    { name: 'Hydrogen', Decription: 1111, FileType: 'txt', Download:  "" },
+    { name: 'Helium', Description: 4.0026, FileType: 'txt',Download: "download"},
+    { name: 'Lithium', Description: 6.941, FileType: 'txt',Download: "download"},
+    { name: 'Beryllium', Description: 9.0122, FileType: 'txt',Download: "download"},
+    { name: 'Boron', Description: 10.811, FileType: 'txt',Download: "download"},
+    { name: 'Carbon', Description: 12.0107, FileType: 'txt',Download: "download"},
+    { name: 'Nitrogen', Description: 14.0067, FileType: 'txt',Download: "download"},
+    { name: 'Oxygen', Description: 15.9994, FileType: 'txt',Download: "download"},
+    { name: 'Fluorine', Description: 18.9984, FileType: 'txt',Download: "download"},
+    { name: 'Neon', Description: 20.1797, FileType: 'txt',Download: "download"},
   ];
 
   isSearching: boolean = false
@@ -31,7 +31,6 @@ export class HomeComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    this.table.renderRows();
   }
 
 

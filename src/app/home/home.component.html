@@ -29,14 +29,13 @@
 
 <!-- SECONDA CARD -->
 
-<mat-card *ngIf="isSearching === true" style="margin: auto; width: 60%; margin-top: 6em;" class="mat-elevation-z8">
+<mat-card *ngIf="isSearching === true" style="margin: auto; width: 60%; margin-top: 6em;" class="mat-elevation-z8 width">
 
   <mat-card-title>
     <div style="color: #004a93; margin-bottom: 1em;">
         Insert your policy informations
     </div>
   </mat-card-title>
-
   <form fxLayout="row" fxLayoutAlign="center center">
       <mat-form-field appearance="fill">
           <mat-label>Company</mat-label>
@@ -50,7 +49,6 @@
 
       <!-- <button mat-raised-button color="primary">Search</button> -->
   </form>
-
   <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
 
       <!-- Name Column -->
@@ -62,19 +60,19 @@
       <!-- Weight Column -->
       <ng-container matColumnDef="Description">
         <th mat-header-cell *matHeaderCellDef> Description </th>
-        <td mat-cell *matCellDef="let element"> {{element.weight}} </td>
+        <td mat-cell *matCellDef="let element"> {{element.Description}} </td>
       </ng-container>
 
       <!-- Symbol Column -->
       <ng-container matColumnDef="FileType">
-        <th mat-header-cell *matHeaderCellDef> FyleType </th>
-        <td mat-cell *matCellDef="let element"> {{element.symbol}} </td>
+        <th mat-header-cell *matHeaderCellDef> FileType </th>
+        <td mat-cell *matCellDef="let element"> {{element.FileType}} </td>
       </ng-container>
 
       <!-- Position Column -->
       <ng-container matColumnDef="Download">
         <th mat-header-cell *matHeaderCellDef> Download </th>
-        <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+        <td mat-cell *matCellDef="let element"> <button mat-icon-button><mat-icon>download</mat-icon></button></td>
       </ng-container>
 
       <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
