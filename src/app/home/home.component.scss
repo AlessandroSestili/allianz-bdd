@@ -51,16 +51,28 @@ mat-card.second div{
 
 table {
   width: 100%;
-  overflow: auto;
 }
 
 .width{
   width: 90% !important;
 }
 
-
 /* sticky table header */
 .example-container {
   height: 65vh;
   overflow: auto;
 }
+
+// scrollBar removed
+.example-container::-webkit-scrollbar{
+  display: none;
+}
+
+.displayNone{
+  display: none;
+}
+
+.displayBlock{
+  display: block;
+}
+
