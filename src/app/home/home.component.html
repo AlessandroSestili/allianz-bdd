@@ -49,6 +49,14 @@
           <input matInput placeholder="Ex. 0000000000">
       </mat-form-field>
 
+      <button
+        class="searchTable"
+        mat-raised-button
+        color="primary"
+        (click)="switchSearch()"
+        > Search
+      </button>
+
       <!-- <button mat-raised-button color="primary">Search</button> -->
   </form>
   <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">

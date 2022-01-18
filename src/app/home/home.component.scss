@@ -22,7 +22,7 @@ mat-card.first{
 
 ::ng-deep .rowForm {
   mat-form-field {
-    width: 46% !important;
+    width: 40% !important;
     padding-left: 0.8em;
   }
 }
@@ -33,4 +33,9 @@ table {
 
 .width{
   width: 90% !important;
+}
+
+.searchTable{
+  left: 5.7rem;
+  bottom: 0.5em;
 }
