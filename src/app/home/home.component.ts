@@ -14,7 +14,7 @@ export class HomeComponent implements OnInit {
   displayedColumns: string[] = ['name', 'Description', 'FileType', 'Download'];
 
   dataSource: any[] = [
-    { name: 'Hydrogen', Decription: 1111, FileType: 'txt', Download:  "" },
+    { name: 'Hydrogen', Description: 1.111, FileType: 'txt', Download: "download" },
     { name: 'Helium', Description: 4.0026, FileType: 'txt',Download: "download"},
     { name: 'Lithium', Description: 6.941, FileType: 'txt',Download: "download"},
     { name: 'Beryllium', Description: 9.0122, FileType: 'txt',Download: "download"},
