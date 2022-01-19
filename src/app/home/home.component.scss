@@ -50,11 +50,16 @@ mat-card.second div{
   color: #004a93;
   margin-bottom: 1em;
   margin-left: 0.5em;
+  height: auto;
+}
+
+mat-paginator {
+  margin-top: 2rem;
 }
 
 .filter-right{
   margin-left: 1em;
-  width: 87.5%;
+  width: 80.8%;
 }
 
 table {
@@ -74,6 +79,7 @@ table {
 .mat-icon-input {
   margin-right: 5px;
 }
+
 // scrollBar removed
 .example-container::-webkit-scrollbar{
   display: none;

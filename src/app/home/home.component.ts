@@ -2,8 +2,9 @@ import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 import { MatButton } from '@angular/material/button';
 import { MatTable, MatTableDataSource } from '@angular/material/table';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { MatSort } from '@angular/material/sort';
+import { MatSort, Sort } from '@angular/material/sort';
 import { MatPaginator } from '@angular/material/paginator';
+import { LiveAnnouncer } from '@angular/cdk/a11y';
 
 @Component({
   selector: 'app-home',
@@ -26,7 +27,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
   tablePolicy: any
   @ViewChild(MatTable) table: any;
   @ViewChild(MatPaginator) paginator!: MatPaginator;
-  @ViewChild(MatSort) sort: MatSort = new MatSort;
+  @ViewChild(MatSort) sort!: MatSort;
 
   displayedColumns: string[] = ['CompanyName', 'Description', 'FileType', 'Download'];
 
@@ -47,7 +48,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
 
   isSearching: boolean = false
 
-  constructor() { this.dataSource = new MatTableDataSource(this.data); }
+  constructor(private _liveAnnouncer: LiveAnnouncer) { this.dataSource = new MatTableDataSource(this.data); }
 
   ngOnInit(): void {
   }
@@ -56,6 +57,18 @@ export class HomeComponent implements OnInit, AfterViewInit {
     this.dataSource.paginator = this.paginator;
     this.dataSource.sort = this.sort;
   }
+
+  // announceSortChange(sortState: any) {
+  //   // This example uses English messages. If your application supports
+  //   // multiple language, you would internationalize these strings.
+  //   // Furthermore, you can customize the message to add additional
+  //   // details about the values being sorted.
+  //   if (sortState.direction) {
+  //     this._liveAnnouncer.announce(`Sorted ${sortState.direction}ending`);
+  //   } else {
+  //     this._liveAnnouncer.announce('Sorting cleared');
+  //   }
+  // }
 
   switchSearch(){
     this.isSearching = !this.isSearching
