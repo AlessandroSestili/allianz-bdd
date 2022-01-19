@@ -1,7 +1,7 @@
 import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 import { MatButton } from '@angular/material/button';
 import { MatTable, MatTableDataSource } from '@angular/material/table';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormControl, FormControlName, FormGroup, Validators } from '@angular/forms';
 import { MatSort, Sort } from '@angular/material/sort';
 import { MatPaginator } from '@angular/material/paginator';
 import { LiveAnnouncer } from '@angular/cdk/a11y';
@@ -13,6 +13,9 @@ import { MatSnackBar } from '@angular/material/snack-bar';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit, AfterViewInit {
+  //ngModel input first card
+  nameCompany: any
+  policyNumber: any
 
   // Validatori della card inizale
   numberRegEx = /^-?([0-9]\d*)?$/;
@@ -78,8 +81,9 @@ export class HomeComponent implements OnInit, AfterViewInit {
 
   //Al click di Search apre la tabella
   switchSearch(){
-    if(false) { // TODO: Aggiungere una condizione che detecta se la policy o la company name NON sono valide 
-      this._snackBar.open("Invalid policy datas", "Close", {duration: 3000})
+    if(true) { // TODO: Aggiungere una condizione che detecta se la policy o la company name NON sono valide 
+      this._snackBar.open("Invalid policy datas", "Retry", {duration: 3000})
+      this.refreshTableInputValue()
     } else {
       this.isSearching = !this.isSearching
     }

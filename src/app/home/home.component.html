@@ -10,13 +10,13 @@
       <form class="firstForm" #firstForm>
           <mat-form-field appearance="fill">
               <mat-label>	<mat-icon class="mat-icon-input">work</mat-icon>Company</mat-label>
-              <input matInput placeholder="Ex. Allianz" [formControl]="companyFormControl">
+              <input matInput placeholder="Ex. Allianz" [formControl]="companyFormControl" [(ngModel)]="nameCompany">
               <mat-error *ngIf="companyFormControl.hasError('required')">Insert your company name</mat-error>
           </mat-form-field>
 
           <mat-form-field class="example-full-width" appearance="fill">
               <mat-label><mat-icon class="mat-icon-input">assignment</mat-icon>Policy</mat-label>
-              <input matInput placeholder="Ex. 0000000000" [formControl]="policyFormControl">
+              <input matInput placeholder="Ex. 0000000000" [formControl]="policyFormControl" [(ngModel)]="policyNumber">
               <mat-error *ngIf="policyFormControl.invalid">Insert your policy</mat-error>
           </mat-form-field>
 
