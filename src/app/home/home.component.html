@@ -66,12 +66,12 @@
           > 	<mat-icon>search</mat-icon>Search
         </button>
 
-    </form>
-
     <mat-form-field class="filter-right" appearance="standard">
       <mat-label>Filter</mat-label>
       <input matInput (keyup)="applyFilter($event)" placeholder="Company Name" #input>
     </mat-form-field>
+  </form>
+
 
     <div class="example-container">
       <table mat-table [dataSource]="dataSource" matSort >

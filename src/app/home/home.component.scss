@@ -10,6 +10,16 @@ div.container{
   }
 }
 
+@media screen and (max-width: 960px) {
+  .rowForm mat-form-field {
+      width: 98% !important;
+      padding-left: 0.8em;
+  }
+  .rowForm button {
+    margin-left: auto;
+  }
+}
+
 .div-title {
   margin-bottom: 25px;
   color: #004a93;
@@ -26,6 +36,11 @@ mat-card.first{
     width: 100% !important;
   }
 }
+
+.firstForm button {
+  margin-right: 0.6em;
+}
+
 
 ::ng-deep .rowForm {
   mat-form-field {
@@ -50,16 +65,10 @@ mat-card.second div{
   color: #004a93;
   margin-bottom: 1em;
   margin-left: 0.5em;
-  height: auto;
-}
-
-mat-paginator {
-  margin-top: 2rem;
 }
 
 .filter-right{
-  margin-left: 1em;
-  width: 80.8%;
+  width: 98%;
 }
 
 table {
@@ -79,7 +88,6 @@ table {
 .mat-icon-input {
   margin-right: 5px;
 }
-
 // scrollBar removed
 .example-container::-webkit-scrollbar{
   display: none;
