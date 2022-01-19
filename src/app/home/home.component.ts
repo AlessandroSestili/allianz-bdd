@@ -5,6 +5,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatSort, Sort } from '@angular/material/sort';
 import { MatPaginator } from '@angular/material/paginator';
 import { LiveAnnouncer } from '@angular/cdk/a11y';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-home',
@@ -31,6 +32,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
 
   displayedColumns: string[] = ['CompanyName', 'Description', 'FileType', 'Download'];
 
+  //TODO: dati statici da cancellare 
   data: any[] = [
     { CompanyName: 'Hydrogen', Description: 1111, FileType: 'txt', Download:  "download" },
     { CompanyName: 'Helium', Description: 4.0026, FileType: 'txt',Download: "download"},
@@ -48,7 +50,11 @@ export class HomeComponent implements OnInit, AfterViewInit {
 
   isSearching: boolean = false
 
-  constructor(private _liveAnnouncer: LiveAnnouncer) { this.dataSource = new MatTableDataSource(this.data); }
+  constructor(
+    private _liveAnnouncer: LiveAnnouncer,
+    private _snackBar: MatSnackBar) 
+
+  { this.dataSource = new MatTableDataSource(this.data); }
 
   ngOnInit(): void {
   }
@@ -70,8 +76,13 @@ export class HomeComponent implements OnInit, AfterViewInit {
   //   }
   // }
 
+  //Al click di Search apre la tabella
   switchSearch(){
-    this.isSearching = !this.isSearching
+    if(false) { // TODO: Aggiungere una condizione che detecta se la policy o la company name NON sono valide 
+      this._snackBar.open("Invalid policy datas", "Close", {duration: 3000})
+    } else {
+      this.isSearching = !this.isSearching
+    }
   }
 
   //Svuota i valori degli input dei campi sopra la TABLE
@@ -85,6 +96,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
     this.tablePolicyFormControl.reset()
   }
 
+  // Filtra i dati della tabella
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();
@@ -96,5 +108,4 @@ export class HomeComponent implements OnInit, AfterViewInit {
 
   logger() {
   }
-
 }
