@@ -81,7 +81,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
 
   //Al click di Search apre la tabella
   switchSearch(){
-    if(true) { // TODO: Aggiungere una condizione che detecta se la policy o la company name NON sono valide 
+    if(false) { // TODO: Aggiungere una condizione che detecta se la policy o la company name NON sono valide 
       this._snackBar.open("Invalid policy datas", "Retry", {duration: 3000})
       this.refreshTableInputValue()
     } else {

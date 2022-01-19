@@ -52,6 +52,7 @@
 
         <mat-form-field class="form-right" appearance="fill">
             <mat-label><mat-icon class="mat-icon-input">assignment</mat-icon>Policy</mat-label>
+            <!-- TODO: Aggiungi un IF che mi valida se policy e company name sono validi -->
             <input matInput placeholder="Ex. 0000000000" [formControl]="tablePolicyFormControl" [(ngModel)]="tablePolicy">
             <mat-error *ngIf="tablePolicyFormControl.invalid">Insert your policy</mat-error>
         </mat-form-field>
